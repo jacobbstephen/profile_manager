@@ -1,5 +1,7 @@
 package com.ignite2025.profileapp;
 
+import java.util.Scanner;
+
 public class ProfileUtils implements CSVInfo {
 	public static  boolean isMatchingCompany(Profile profile, String company) {
 		return profile.getCompany().equals(company);
@@ -59,5 +61,31 @@ public class ProfileUtils implements CSVInfo {
 	}
 	public static String makeProfile(Profile profile) {
 		return String.join(",", profile.getName(), profile.getEmployee_id(), profile.getCompany(), profile.getDesigination());
+	}
+	public static Profile  makeProfileObject() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the new Employee ID: ");
+		String emp_id = sc.next();
+		System.out.print("Enter the new Name: ");
+		String name = sc.next();
+		System.out.print("Enter the new Company Name: ");
+		String company = sc.next();
+		System.out.print("Enter the new Desigination: ");
+		String desigination = sc.next();
+
+		Profile updatedProfile = new Profile();
+		updatedProfile.setProfile(name, emp_id, company, desigination);
+		return updatedProfile;
+	}
+	public static void printProfiles(Profile[] profiles) {
+		for(Profile profile: profiles) {
+			System.out.println(profile);
+		}
+		System.out.println();
+	}
+	
+	public static void getProfileAndPrint(ProfileManager manager) {
+		Profile[] profiles = manager.getProfiles();
+		ProfileUtils.printProfiles(profiles);
 	}
 }

@@ -36,6 +36,7 @@ public class ProfileManager {
 				return profiles[i];
 			}
 		}
+		System.out.println("No Profile Found");
 		return null;
 	}
 	
@@ -48,7 +49,10 @@ public class ProfileManager {
 				result[resultCount++] = profiles[i];
 			}
 		}
-		if(resultCount == 0) return null;
+		if(resultCount == 0) {
+			System.out.println("No Profile Found");
+			return null;
+		}
 		return ProfileUtils.trimResult(result, resultCount);
 	}
 }
