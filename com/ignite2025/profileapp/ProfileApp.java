@@ -11,12 +11,12 @@ public class ProfileApp {
 		System.out.print("Enter the Employee ID to edit: ");
 		String id = sc.next();
 		
-		Profile updatedProfile = ProfileUtils.makeProfileObject();
+		Profile updatedProfile = ProfileUtils.createProfileFromInput();
 		
 		if(manager.editProfile(id, updatedProfile)) System.out.println("Profile Edited Succesfully");
 		else System.out.println("Profile Not Edited. Try Again later.");
 		System.out.println();
-		ProfileUtils.getProfileAndPrint(manager);
+		ProfileUtils.printAllProfilesFromManager(manager);
 		
 	}
 	

@@ -2,6 +2,23 @@ package com.ignite2025.profileapp;
 
 import java.util.Scanner;
 
+//isMatchingCompany → Checks if the profile's company matches the given company.
+//isMatchingDesigination → Checks if the profile's designation matches the given value.
+//isMatchingEmployeeId → Checks if the profile's employee ID matches the given ID.
+//isMatchingName → Checks if the profile's name matches the given name.
+//lengthOfProfiles → Returns the length of the profile array.
+//csvToArray → Converts CSV string into an array of lines.
+//lengthOfRecord → Returns the number of elements in a string array.
+//splitString → Splits a string using comma as the delimiter.
+//csvToProfile → Converts an array of CSV entries into an array of Profile objects.
+//trimResult → Trims a profile array to the specified valid size.
+//validProfile → Validates if a profile object has all non-null required fields.
+//profileToCSV → Converts a Profile object into a CSV-formatted string.
+//makeProfileObject → Takes user input and creates a new Profile object.
+//printProfiles → Prints each profile in the array to the console.
+//getProfileAndPrint → Loads all profiles from the manager and prints them.
+
+
 public class ProfileUtils implements CSVInfo {
 	public static  boolean isMatchingCompany(Profile profile, String company) {
 		return profile.getCompany().equals(company);
@@ -59,10 +76,10 @@ public class ProfileUtils implements CSVInfo {
 	public static boolean validProfile(Profile profile) {
 		return profile !=  null && profile.getName() != null && profile.getEmployee_id() != null && profile.getCompany() != null && profile.getDesigination() != null;
 	}
-	public static String makeProfile(Profile profile) {
+	public static String profileToCSV(Profile profile) {
 		return String.join(",", profile.getName(), profile.getEmployee_id(), profile.getCompany(), profile.getDesigination());
 	}
-	public static Profile  makeProfileObject() {
+	public static Profile  createProfileFromInput() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the new Employee ID: ");
 		String emp_id = sc.next();
@@ -84,7 +101,7 @@ public class ProfileUtils implements CSVInfo {
 		System.out.println();
 	}
 	
-	public static void getProfileAndPrint(ProfileManager manager) {
+	public static void printAllProfilesFromManager(ProfileManager manager) {
 		Profile[] profiles = manager.getProfiles();
 		ProfileUtils.printProfiles(profiles);
 	}

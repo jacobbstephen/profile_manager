@@ -25,6 +25,7 @@ public class ProfileManager {
 	}
 	
 	
+	
 	public Profile[] getProfiles() {
 		return profiles;
 	}

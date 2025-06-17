@@ -29,7 +29,7 @@ public class ProfileReader implements Path {
 				){
 			for(Profile profile: profiles) {
 				if(ProfileUtils.validProfile(profile)) {
-					String line = ProfileUtils.makeProfile(profile);
+					String line = ProfileUtils.profileToCSV(profile);
 					bufferedWriter.write(line + "\n");
 				}
 			}
