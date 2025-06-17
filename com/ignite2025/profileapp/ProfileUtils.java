@@ -16,7 +16,7 @@ import java.util.Scanner;
 //profileToCSV → Converts a Profile object into a CSV-formatted string.
 //makeProfileObject → Takes user input and creates a new Profile object.
 //printProfiles → Prints each profile in the array to the console.
-//getProfileAndPrint → Loads all profiles from the manager and prints them.
+//printAllProfilesFromManager → Loads all profiles from the manager and prints them.
 
 
 public class ProfileUtils implements CSVInfo {
